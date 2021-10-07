@@ -1,5 +1,4 @@
-[![cover](https://i.imgur.com/z7wBEwj.png)](https://i.imgur.com/z7wBEwj.png)
-[![stratz](https://user-images.githubusercontent.com/20866892/96916369-26a3ca00-14b0-11eb-9fa5-976767f33d2f.png)
+![cover](https://i.imgur.com/z7wBEwj.png)
 :trollface:
 
 ### dot
@@ -7,6 +6,8 @@
 watch dota2 from terminal
 
 ### api
+<img src="https://user-images.githubusercontent.com/20866892/96916369-26a3ca00-14b0-11eb-9fa5-976767f33d2f.png" width="420">
+
 the current data is taken from [stratz REST API](https://docs.stratz.com/index.html)
 
 ### application
