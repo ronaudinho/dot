@@ -1,32 +1,21 @@
 package ui
 
 import (
-	"fmt"
-	"strconv"
-
 	"github.com/rivo/tview"
 )
 
+// Main draws the main menu of the UI
 func (a *App) Main() error {
-	ls, err := a.be.GetLeagues()
+	menu := tview.NewList()
+
+	lives, err := a.Live()
 	if err != nil {
-		return err
+		//
+	}
+	if lives != nil {
+		menu = lives
 	}
 
-	menu := tview.NewList()
-	for i, l := range ls {
-		var name string
-		if l.DisplayName != "" {
-			name = l.DisplayName
-		} else {
-			name = l.Name
-		}
-		page := fmt.Sprintf("league/%d", l.ID)
-		menu.AddItem(name, "", rune(i), func() {
-			a.pages.SwitchToPage(page)
-		})
-		a.League(strconv.FormatInt(l.ID, 10))
-	}
 	menu.AddItem("quit", "", 'q', func() {
 		a.FE.Stop()
 	})

@@ -1,9 +1,12 @@
 package main
 
 import (
-	"fmt"
+	"github.com/ronaudinho/dot/cli"
+	"github.com/ronaudinho/dot/stratz"
 )
 
 func main() {
-	fmt.Println("unimplemented")
+	api := stratz.NewDefaultClient()
+	app := cli.NewApp(api)
+	app.Live()
 }

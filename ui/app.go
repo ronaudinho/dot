@@ -13,7 +13,6 @@ type App struct {
 }
 
 func NewApp(svc api.Service) *App {
-	app := tview.NewApplication().SetBackgroundColor()
 	return &App{
 		FE:    tview.NewApplication(),
 		pages: tview.NewPages(),

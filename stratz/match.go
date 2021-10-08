@@ -18,8 +18,8 @@ func (c *Client) GetMatches() ([]api.Match, error) {
 	return nil, nil
 }
 
-func (c *Client) GetMatchLive(id string) (api.Match, error) {
-	var m api.Match
+func (c *Client) GetMatchDetail(id string) (api.MatchDetail, error) {
+	var m api.MatchDetail
 	url := fmt.Sprintf("%s/api/%s/match/%s/live", c.baseURL, c.version, id)
 
 	res, err := http.Get(url)
@@ -43,8 +43,8 @@ func (c *Client) GetMatchLive(id string) (api.Match, error) {
 	return m, nil
 }
 
-func (c *Client) GetMatchBreakdown(id string) (api.Match, error) {
-	var m api.Match
+func (c *Client) GetMatchBreakdown(id string) (api.MatchDetail, error) {
+	var m api.MatchDetail
 	url := fmt.Sprintf("%s/api/%s/match/%s/breakdown", c.baseURL, c.version, id)
 
 	res, err := http.Get(url)

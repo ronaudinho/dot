@@ -2,7 +2,6 @@ package ui
 
 import (
 	"fmt"
-	"strconv"
 	"strings"
 
 	"github.com/rivo/tview"
@@ -23,12 +22,10 @@ func (a *App) League(id string) error {
 				rk += p.Kills
 				nw += p.NetWorth
 				xp += (p.ExperiencePerMinute * m.DurationSeconds / 60)
-				rh = append(rh, strconv.Itoa(p.HeroID))
 			} else {
 				dk += p.Kills
 				nw -= p.NetWorth
 				xp -= (p.ExperiencePerMinute * m.DurationSeconds / 60)
-				dh = append(rh, strconv.Itoa(p.HeroID))
 			}
 		}
 		name := fmt.Sprintf("%d %d - %d %d", m.RadiantID, rk, dk, m.DireID) // convert to name
